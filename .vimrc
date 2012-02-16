@@ -125,4 +125,10 @@ compiler ruby         " Enable compiler support for ruby
 colorscheme anotherdark   " Use the 'anotherdark' color scheme
 
 " Added by Raj Sahae 2012.01.23
-set spell             " Enable spellchecker
+set nospell             " Enable spellchecker
+
+" Added by Raj Sahae 2012.01.24
+set autoindent
+
+" Added by Raj Sahae 2012.02.15
+set foldmethod=indent   " Set foldmethod to fold by indents
