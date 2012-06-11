@@ -132,3 +132,7 @@ set autoindent
 
 " Added by Raj Sahae 2012.02.15
 set foldmethod=indent   " Set foldmethod to fold by indents
+
+" Added by Raj Sahae 2012.06.10
+" Single character insert
+nmap <Space> i_<Esc>r
