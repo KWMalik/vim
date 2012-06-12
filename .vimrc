@@ -27,6 +27,7 @@ if has("vms")
 else
   set backup		" keep a backup file
   set backupdir=~/.vimswaps
+  set directory=~/.vimswaps " keep swapfiles in the backup directory
 endif
 
 set history=50		" keep 50 lines of command line history
