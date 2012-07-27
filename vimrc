@@ -153,6 +153,6 @@ set listchars=tab:>-,trail:.,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 set shortmess=atI             " Stifle interrupting prompts
 nnoremap <leader>c <C-w>c
-nnoremap <leader>s <C-w>s
-nnoremap <leader>v <C-w>v
+nnoremap <leader>s <C-w>s<C-w>j
+nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>w <C-w>w
