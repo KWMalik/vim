@@ -137,7 +137,7 @@ set foldmethod=indent   " Set foldmethod to fold by indents
 
 " Added by Raj Sahae 2012.06.10
 let mapleader = ","     " Set leader to comma
-colorscheme ir_black
+colorscheme desert256
 " Swap the  ' and ` keys
 nnoremap ' `
 nnoremap ` '
@@ -156,6 +156,7 @@ nnoremap <leader>c <C-w>c
 nnoremap <leader>s <C-w>s<C-w>j
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>w <C-w>w
+nnoremap <leader><leader>w :w<CR>
 " key mappings for bracket completion
 inoremap { {}<Left>
 inoremap {<CR> {<CR>}<Esc>O
