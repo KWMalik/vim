@@ -1,4 +1,3 @@
-
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -30,11 +29,19 @@ else
   set directory=~/.vimswaps " keep swapfiles in the backup directory
 endif
 
-set history=50		" keep 50 lines of command line history
+set history=1000	" keep 1000 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
+set showmode            " Show current mode at the bottom
+set gcr=a:blinkon0      " Disable cursor blink
 set incsearch		" do incremental searching
-set wildmenu            " use the wildmenu for tab completion
+set visualbell          " No sounds
+set autoread            " Autoload files changed outside of Vim
+
+" This makes vim act like all other editors, buffers can
+" exist in the background without being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
+set hidden
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -101,7 +108,7 @@ set number
 set ignorecase		" ignore case in a pattern
 set smartcase		" Ignore case when pattern is lowercase letters only
 "set vb				" Use visual bell instead of beeping
-"set autoindent		" always set autoindenting on
+set autoindent		" always set autoindenting on
 
 " Java Highlighting, Syntax, and C++ error marking
 "let java_highlight_all=1
@@ -109,31 +116,43 @@ set smartcase		" Ignore case when pattern is lowercase letters only
 "let java_highlight_cpp_keywords=1
 
 " Added by Raj Sahae 2011.12.13
-command Rake !rake
-command WR w|!rake
+"command Rake !rake
+"command WR w|!rake
 
 " Added by Raj Sahae 2012.01.03
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
-compiler ruby         " Enable compiler support for ruby
+"compiler ruby         " Enable compiler support for ruby
 
 " Added by Raj Sahae 2012.01.11
 "runtime bundles/tplugin_vim/macros/tplugin.vim
 "runtime bundles/tskeleton/macros/tskeleton.vim
 
-" Added by Raj Sahae 2012.01.12
-colorscheme anotherdark   " Use the 'anotherdark' color scheme
-
 " Added by Raj Sahae 2012.01.23
 set nospell             " Enable spellchecker
-
-" Added by Raj Sahae 2012.01.24
-set autoindent
 
 " Added by Raj Sahae 2012.02.15
 set foldmethod=indent   " Set foldmethod to fold by indents
 
 " Added by Raj Sahae 2012.06.10
+let mapleader = ","     " Set leader to comma
+colorscheme ir_black
+" Swap the  ' and ` keys
+nnoremap ' `
+nnoremap ` '
 " Single character insert
-nmap <Space> i_<Esc>r
+nmap <Leader><Space> i_<Esc>r
+runtime macros/matchit.vim    " Enable extended % matching
+set wildmenu                  " use the wildmenu for tab completion
+set wildmode=list:longest     " shell style completion
+set title                     " Set terminal title
+set scrolloff=3               " Maintain 3 lines of context around the cursor
+" Catch trailing whitespace
+set listchars=tab:>-,trail:.,eol:$
+nmap <silent> <leader>s :set nolist!<CR>
+set shortmess=atI             " Stifle interrupting prompts
+nnoremap <leader>c <C-w>c
+nnoremap <leader>s <C-w>s
+nnoremap <leader>v <C-w>v
+nnoremap <leader>w <C-w>w
