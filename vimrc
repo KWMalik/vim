@@ -156,3 +156,6 @@ nnoremap <leader>c <C-w>c
 nnoremap <leader>s <C-w>s
 nnoremap <leader>v <C-w>v
 nnoremap <leader>w <C-w>w
+" key mappings for bracket completion
+inoremap { {}<Left>
+inoremap {<CR> {<CR>}<Esc>O
